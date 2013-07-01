@@ -97,7 +97,7 @@ Large volumes of data are particularly useful when used as reference for functio
 that formalize the interactions between the components of a network.
 Such models can assist in exploration and transfer of knowledge. 
 Functional disease models can be combined with patient-specific expression profiles to stratify 
-patients into treatment groups and maximize efficacy.
+patients into groups and maximize treatment efficacy.
 
 Executable biology is a relatively new area in systems biology and takes the approach of \emph{in silico} mimicking biological processes of interacting 
 network components. This paradigm offers a close match with biological intuition~\cite{ex-bio}.
@@ -239,7 +239,7 @@ f(a, b) = \left\{ \begin{array}{ll}
 $$
 
 
-The reaction rate $r$ is computed from a single kinetic constant $k$ and the activity levels of the reactants. Three kinetic scenarios are implemented :\\
+The reaction rate $r$ is computed from a single kinetic constant $k$ and the activity levels of the reactants ($a, b$). Three kinetic scenarios are implemented :\\
 %\begin{description}
 {\bf Scenario 1}: $r(a) = k \times a$ : the reaction rate depends on the activity level of the upstream enzyme only. \\
 {\bf Scenario 2}: $r(a, b) = k \times a \times b$ : the reaction rate depends on the activity levels of both the upstream enzyme and the
@@ -441,7 +441,7 @@ These findings led the authors of~\cite{egf-ngf} to hypothesize the existence of
 existence of a new network component that blocks this feedback. It was found that NGF prevents this blocking, leading to sustained activation~\cite{egf-ngf}.
 We have formalized and implemented these topological reasonings in an ANIMO model, shown in Figure~\ref{fig:case-study-model}. 
 The parameters used in this network are given in Table~\ref{tab:case-study-parameters}.
-The reference experimental conditions are the addition of either EGF or NGF
+The accompanying experimental conditions are the addition of either EGF or NGF
 in sufficient quantity to fully activate their respective receptors. After 10 minutes a growth factor-neutralizing 
 antibody is added, shutting off the input signal to the network. The evolution of the network is
 observed for 60 minutes from the initial treatment.
@@ -591,7 +591,7 @@ such as stochastic models\footnote{Stochastic modelling becomes particularly use
 molecular species have very small concentrations, which nullifies the assumption of a well-mixed solution used in models based on ODEs.}
 used in COPASI and E-Cell, and by allowing for qualitative modelling, as does GNA.
 Other tools, such as Systems Biology Workbench~\cite{sbw}, allow to couple high-performance
-analysis engines (like roadRunner) to user-friendly interfaces (e.g. JDesigner). Finally, tools like CellDesigner~\cite{celldesigner}
+analysis engines (such as roadRunner) to user-friendly interfaces (e.g. JDesigner). Finally, tools such as CellDesigner~\cite{celldesigner}
 provide an appealing graphical representation as an interface to powerful computational engines.
 Most of the cited tools are founded on parameter-intensive approaches, while the paradigm implemented in ANIMO
 uses less precise formulations, which requires less initial knowledge from the user.
@@ -623,14 +623,14 @@ analysis techniques to query constructed models. In particular, applying model c
 such as ``What is the combination of inputs that leads to $\mbox{activity}(A) \geq 20/50$
 and $\mbox{activity}(B) < 10/80$ in 120 minutes?''. Moreover, taking advantage of statistical model
 checking capabilities recently introduced to UPPAAL~\cite{uppaal-smc}, we plan to extend the current modelling paradigm adding the possibility
-to define stochastic behaviour (e.g., assign an exponential distribution to the addition of a drug as input to the network),
-and support probabilistic queries such as ``What is the probability that
+to define stochastic behaviour. This could for instance be done by assigning exponential distributions to a set of reactions,
+to support probabilistic queries such as ``What is the probability that
 $\mbox{activity}(A) \geq 40/50$ in 30 minutes?''.
 Other interesting developments are aimed at further speeding up the modelling phase, in order to let the user
 start interrogating a model as soon as possible. We plan to include a support for parameter
 sensitivity analysis and automated parameter fitting to a given experimental data set. 
 After having defined a measure of distance between the model and the experimental data, we plan to minimize that distance
-via (user-defined) parameter sweeps.
+via user-defined parameter sweeps.
 We are also developing
 techniques based on automata learning~\cite{test-based-modelling} for deriving the topology of a biological network, based
 on a series of constraints and experimental data series.
