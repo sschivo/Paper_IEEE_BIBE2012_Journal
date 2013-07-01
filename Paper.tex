@@ -302,17 +302,17 @@ bounds table for a reaction $A \rightarrow B$, using scenario 2.
 \caption{Lower and upper bounds for a reaction $A \rightarrow B$ with kinetic scenario 2, $k = 0.004$ (corresponding to the \emph{medium} preset)
 and 10 seconds per UPPAAL time step. Granularity of $A$ is 5 (i.e. 5 activation steps from 0 to maximum activity), granularity of $B$ is 3. In both cases,
 0 means completely inactive. With these settings, $\mbox{\it levelsScale} = 5.0$ and $\mbox{\it timeScale} = 0.1$. Uncertainty is set at $5 \%$.
-{\color{BrickRed}Red} numbers are lower bounds, {\color{ourBlue} cyan} numbers are upper bounds.}\label{tab:lower-upper-bounds}
+{\color{ourBlue} cyan} numbers are lower bounds, {\color{BrickRed}Red} numbers are upper bounds.}\label{tab:lower-upper-bounds}
 \centering
     \begin{tabular}{|c||c|c|c|c|c|c|}
       \hline
       {\backslashbox[2em]{$B$\kern-2em}{\kern-1em$A$}} & \makebox[.5em]{0} & \makebox[.5em]{1} & \makebox[.5em]{2} & \makebox[.5em]{3} & \makebox[.5em]{4} & \makebox[.5em]{5} \\
       \hline\hline
-      \begin{minipage}[c][1em][c]{1em}\centering 0\end{minipage} & \makebox[.5em]{$\infty$} & [{\scriptsize\color{BrickRed}40}, {\scriptsize\color{ourBlue}44}] & [{\scriptsize\color{BrickRed}20}, {\scriptsize\color{ourBlue}22}] & [{\scriptsize\color{BrickRed}13}, {\scriptsize\color{ourBlue}15}] & [{\scriptsize\color{BrickRed}10}, {\scriptsize\color{ourBlue}11}] & [{\scriptsize\color{BrickRed}8}, {\scriptsize\color{ourBlue}9}] \\
+      \begin{minipage}[c][1em][c]{1em}\centering 0\end{minipage} & \makebox[.5em]{$\infty$} & [{\scriptsize\color{ourBlue}40}, {\scriptsize\color{BrickRed}44}] & [{\scriptsize\color{ourBlue}20}, {\scriptsize\color{BrickRed}22}] & [{\scriptsize\color{ourBlue}13}, {\scriptsize\color{BrickRed}15}] & [{\scriptsize\color{ourBlue}10}, {\scriptsize\color{BrickRed}11}] & [{\scriptsize\color{ourBlue}8}, {\scriptsize\color{BrickRed}9}] \\
       \hline
-      \begin{minipage}[c][1em][c]{1em}\centering 1\end{minipage} & \makebox[.5em]{$\infty$} & [{\scriptsize\color{BrickRed}59}, {\scriptsize\color{ourBlue}66}] & [{\scriptsize\color{BrickRed}30}, {\scriptsize\color{ourBlue}33}] & [{\scriptsize\color{BrickRed}20}, {\scriptsize\color{ourBlue}22}] & [{\scriptsize\color{BrickRed}15}, {\scriptsize\color{ourBlue}16}] & [{\scriptsize\color{BrickRed}12}, {\scriptsize\color{ourBlue}13}] \\
+      \begin{minipage}[c][1em][c]{1em}\centering 1\end{minipage} & \makebox[.5em]{$\infty$} & [{\scriptsize\color{ourBlue}59}, {\scriptsize\color{BrickRed}66}] & [{\scriptsize\color{ourBlue}30}, {\scriptsize\color{BrickRed}33}] & [{\scriptsize\color{ourBlue}20}, {\scriptsize\color{BrickRed}22}] & [{\scriptsize\color{ourBlue}15}, {\scriptsize\color{BrickRed}16}] & [{\scriptsize\color{ourBlue}12}, {\scriptsize\color{BrickRed}13}] \\
       \hline
-      \begin{minipage}[c][1em][c]{1em}\centering 2\end{minipage} & \makebox[.5em]{$\infty$} & [{\scriptsize\color{BrickRed}119}, {\scriptsize\color{ourBlue}131}] & [{\scriptsize\color{BrickRed}59}, {\scriptsize\color{ourBlue}66}] & [{\scriptsize\color{BrickRed}40}, {\scriptsize\color{ourBlue}44}] & [{\scriptsize\color{BrickRed}30}, {\scriptsize\color{ourBlue}33}] & [{\scriptsize\color{BrickRed}24}, {\scriptsize\color{ourBlue}26}] \\
+      \begin{minipage}[c][1em][c]{1em}\centering 2\end{minipage} & \makebox[.5em]{$\infty$} & [{\scriptsize\color{ourBlue}119}, {\scriptsize\color{BrickRed}131}] & [{\scriptsize\color{ourBlue}59}, {\scriptsize\color{BrickRed}66}] & [{\scriptsize\color{ourBlue}40}, {\scriptsize\color{BrickRed}44}] & [{\scriptsize\color{ourBlue}30}, {\scriptsize\color{BrickRed}33}] & [{\scriptsize\color{ourBlue}24}, {\scriptsize\color{BrickRed}26}] \\
       \hline
       \begin{minipage}[c][1em][c]{1em}\centering 3\end{minipage} & \makebox[.5em]{$\infty$} & $\infty$ & $\infty$ & $\infty$ & $\infty$ & $\infty$\\
       \hline
@@ -448,7 +448,7 @@ observed for 60 minutes from the initial treatment.
 
 \begin{figure}[htb]
 \centering
-  \includegraphics[width=.48\textwidth]{mapk_model_egf7}
+  \includegraphics[width=.48\textwidth]{mapk_model_egf}
 \caption{The model represented in the ANIMO user interface.
 The \emph{Network} central panel represents the model as the classical nodes-edges network
 familiar in biology. To this representation, node colours and shapes are added %in order
@@ -559,11 +559,11 @@ when the complete impact of changes to the model becomes much harder to grasp.
 
 \begin{figure}[htb]
 \centering
-  \includegraphics[width=.48\textwidth]{mapk_model_diff4}
+  \includegraphics[width=.48\textwidth]{mapk_model_diff}
 \caption{Difference between the simulations obtained using
 50 ng/ml NGF and 100 ng/ml EGF as input at 22 minutes (vertical red bar in right panel). In this mode, node colours
 are based on the difference of activity between the two configurations of the model:
-a cyan-coloured node is more active due to NGF treatment, while red indicates less activity and white
+a red-coloured node is more active due to NGF treatment, while cyan indicates less activity and white
 means no difference. Note that NGF and EGF are both white, since at 22 minutes, 
 NGF and EGF are inactivated in both conditions by the neutralizing antibody. A slider underneath the graph can be used to 
 interactively view the differences at different time points. \label{fig:case-study-diff}}
