@@ -1,0 +1,106 @@
+﻿Reviewer: 1
+Comments to the Corresponding Author
+This paper presents the application of Timed Automata via ANIMO tool on the modelling of intra-cellular signalling pathways. The overall objective is to help modellers (especially those with not a strong mathematical/computational background) to analyze such biological pathways via a user friendly environment. This is made more clear through the presented case study. The paper has a good and clear structure, and therefore, I suggest that authors make some minor revisions, listed below, before the manuscript can be accepted for publication.
+1.      Page 1, column 2, line 58 & page 2, column 1, section II (A) should be more precise that you will mainly refer to a particular category of biological pathways; that is, intra-cellular molecular pathways. Biological pathways have a more broad meaning: intra-, inter-, and extra-cellular pathways.
+
+Reply:
+ANIMO is indeed suited best for modelling intra-cellular pathways, although it can also handle extracellular autocrine signalling. Upon your suggestion, we now specify at the beginning of section II A that the pathway we describe there is intra-cellular.
+
+2.      Page 3, column 1, line 8. Replace “E.g.” with “For instance,”
+3.      Page 3, column 1, line 49. Replace “De” with “The”
+4.      Page 3, column 1, line 52. Replace “small” with “simple”
+
+Reply:
+We fully agree on these comments and they have been addressed in the text as suggested.
+
+5.      Page 3, column 2, in paragraph starting at line 27, where you are referring about natural variability, you can refer at this point more explicitly how you could incorporate stochasticity, as you refer on that as a future extension in the last page. As an example of stochastic behavior, could you introduce a stochastic element regarding ligand-receptor binding and how this could impact the downstream effects (?)
+
+Reply:
+Upon your suggestion, in the conclusions section we have now elaborated on a possible future implementation of stochastic elements in ANIMO models. Currently, UPPAAL supports only uniform and exponential distributions, but in future versions, UPPAAL developers might extend it with support for other popular distributions.
+Regarding the introduction of stochastic dynamics to specifically model ligand-receptor binding, we are not currently planning to reach that level of detail in our models. As we explain in section III , our primary aim is to provide biologists with an intuitively accessible modelling approach. A series of abstractions from biological details reduces the number of parameters needed, while preserving cause-and-effect relationships. This modelling approach allows capturing the dynamics of larger systems in a semi-quantitative manner, at the cost of abstracting from the detailed molecular mechanisms. Modelling the stochasticity of ligand-receptor binding is currently beyond the scope of ANIMO models.
+
+6.      Page 4, column 2, line 7. Replace “E.g.” with “For instance,”
+7.      Page 6, column 1, line 23. Move that line either before Table II or after Fig 4.
+8.      Page 6, column 2, line 41. Replace “profit of” with “benefit from”
+
+Reply:
+We fully agree on these comments and they have been addressed in the text as suggested.
+
+9.      Page 6, column 2, in paragraph starting at line 43 or later during the discussion. Although the authors have referred to Copasi, E-cell, GNA, they should also refer to Systems Biology Workbench, CellDesigner, Bionetgen and make a comparison of ANIMO with those.  What is the additional value of this tool compared to those (existing tools)? Answering such a question would place this modelling tool in a broader context.
+
+Reply:
+There are indeed many worthy tools in the field of computational modelling. A good review of these tools was given in [1]. Upon your suggestion we have added references to Systems Biology Workbench and CellDesigner, as well as a brief description. Due to strict page limits for IEEE J-BHI manuscripts and a primary focus on presenting a novel modelling method, a more extensive review of existing tools is beyond the scope of this paper.
+
+[1] Herbert M. Sauro, Frank T. Bergmann, Chapter 12 - Software Tools for Systems Biology, In: Edison T. Liu and Douglas A. Lauffenburger, Editor(s), Systems Biomedicine, Academic Press, San Diego, 2010, Pages 289-314, ISBN 9780123725509, http://dx.doi.org/10.1016/B978-0-12-372550-9.00012-2.
+
+10.     Page 7, column 1, line 10. “mathematical details of the underlying model hidden under the hood”. What if a user needs to change some of the default settings? Is there such a possibility/flexibility? If yes, please add this in the text.
+
+Reply:
+Upon your comment and to save space, we have rewritten the section that included the phrase "mathematical details of the underlying model are hidden under the hood".
+It is indeed possible to access the underlying Timed Automata model. This can be done by manually opening and editing ANIMO models in the UPPAAL user interface. Figures 1 and 2 are examples of TA models that are exported from UPPAAL. This way of "personalizing" models adds much potential to the modelling power available to the user. However, detailed knowledge of the TA formalism is needed in order to make meaningful changes to the model, even in its graphical representation in UPPAAL. Currently, modifications or additions to a Timed Automata model generated by ANIMO will not be directly reflected in other models generated by our tool. For these reasons, we chose not to mention this option or encourage the user to adapt the underlying TA model in this paper.
+
+
+
+We thank you for your time and helpful comments, and we hope to have addressed the issues you raised in a satisfactory manner.
+
+
+
+-----------------------
+
+
+
+Reviewer: 2
+Comments to the Corresponding Author
+Summary:
+
+This paper introduces a new tool, ANIMO (Analysis of Networks with Interactive MOdelling) which is based on the formalism of timed automata (TA). The authors explain how a signalling pathway is implemented in a TA, and how the friendly user interface abstracts the user from implementation details. The tool is implemented as a plugin to Cytoscape in order to ensure interoperablity within the community, which is a very positive point for this work. In general, this is a  good piece of work, that presents a new modelling tool and a properly designed case-study.
+
+Issues:
+
+- The authors begin by distinguishing two modeling domains: ODE models, and "executable models" which are based on computational modeling formalisms used to model complex systems (eg: process calculi and automata). The reason claimed for building this tool is the current lack of user-friendly tools for this type of modelling formalisms, which require a more theoretical/mathematical training. This is not true, as one can take the example of the Petri net formalism, which also falls within this category, and where user friendly tools such as Snoopy (Heiner et al, 2012) and CellIllustrator (Nagasaki et al, 2010) exist.
+
+Reply:
+CellIllustrator is indeed a powerful tool for modelling pathways including quantitative dynamics. The graphical aspect is very detailed and allows to produce illustrations that closely match the ones found in biology books. This is coupled with a range of reaction types, that allows for a detailed definition of model dynamics. However, the overabundance of graphical symbols, a lack of clear distinction between visual representation and actual modelling parameters, and the difficulty to access the modelling parameters decrease the tool's usability. Finally, a wide access to CellIllustrator is hampered by its non-free nature.
+UPPAAL is a user-friendly interface for building models with Timed Automata (Figures 1 and 2 are taken directly from the UPPAAL user interface). In that sense it is very comparable to Snoopy, which is an interface to construct Petri net models. But to most biologists, building a meaningful biological model in UPPAAL or Snoopy is not very intuitive. ANIMO exploits the Cytoscape user-interface that is familiar to biologists, to avoid direct interaction with the Timed Automata formalism, with which most biologists will not be familiar.
+We could have used different underlying formalisms with similar results, and we do not think or claim that TA are superior to other formalisms. The main reason for choosing TA over other formalisms is that the quantitative timing properties that are inherent to TA in the form of clocks make them well suited to model temporal dynamics of networks.
+
+
+- Also, the claim that ANIMO abstracts the non-mathematicaly-inclined user from implementation details is not intirely true. The user has to select the proper level of granularity for each variable (which can vary from binary to 100 levels in arbitrary units) which, depending on the sensitivity of the system to some of the variables, may significantly affect the results. This is the kind of non-intuitive insight that requires an experienced modeler.
+
+Reply:
+The comment that the choice of granularity can influence the outcome or behaviour of the model is true. Predictions/simulations of a Boolean model (2 levels) will be limited to a qualitative behaviour of the network, whereas a near-continuous model (100 levels) can be used for a quantitative description of network dynamics. We think that the difference between qualitative models and quantitative models is intuitive enough for users that are new to the tool. Intermediate granularities might indeed take more experience to be exploited effectively.
+We also subscribe to the point of view that experience in the use of ANIMO will help in the construction of models. The contribution in ANIMO lies in the fact that it is made easier for people to start building formal models, even though they are not familiar with or trained in the use of formal mathematical methods.
+
+
+- The claim that automata and other concurrency-based formalisms are more modular that ODE's, hence better suited to build complex models is true. However, the TA formalism presented has a rather complex implementation (shown by the very convoluted representation in Fig 2). Although the graphical interface abstracts the user from the complexity of the implementation (compare Fig 3 to Fig 2), it is not clear why this formalism is more appropriate for the implementation of signalling networks, comparing for instance to a stochastic petri net, where the biological network representation and the actual implementation are the same.
+
+Reply:
+The reviewer is completely right that other formalisms are also suited for modelling biological systems. In this respect, each formalism has its own strengths and peculiarities. As we said in reply to the first comment, we do not think or claim that TA are superior to other formalisms. Some of the basic characteristics of TA, such as the clocks that can be directly related to real-time, are very suited to model temporal dynamics of concurrent systems, which is one of the reasons for choosing TA.
+The implementation of TA templates that can be used for automatic translation of user input to a TA-
+model is indeed an intricate piece of work. The templates allow for different kinetic scenarios, and reactants with different granularities in order to give a quantitative description of network dynamics. These templates can indeed be difficult to understand for users without knowledge on Timed Automata. However, the ANIMO interface shields the user from these templates, and the user only interacts with network representations in the Cytoscape interface.
+We also subscribe to the opinion that Petri nets have an intuitive visual aspect to them. Nevertheless, we find it difficult to understand how a quantitative model of the dynamics of a biological network represented in the Petri net formalism can have the exact same appearance as a biological textbook representation of that network.
+
+
+- One disadvantage of automata compared to other graph-based formalisms (eg: boolean networks, bayesian networks, petri nets), is the fact that nodes represent states rather than objects. This makes the representation of biochemical reaction networks a lot less intuitive. I would like to see a discussion on the relationship between timed automata and timed/stochastic petri nets, and a reason for choosing the former.
+
+Reply:
+We agree on the fact that network representations where nodes depict objects are more intuitive than representations where nodes depict states. For this reason, Timed Automata are indeed not very intuitive to users that are not familiar with them. Therefore, we have chosen a completely different interface, Cytoscape, which has amply proven itself as a useful and intuitive interface for the representation of biological networks. This is the interface users are interacting with. In ANIMO representations, nodes depict objects, i.e. molecular species, whereas node colours depict the activity of these objects. In that way, all node colours together define the state of the network. By interactively using the time slider, the nodes change colour as the objects change their activity. We do feel that this animated view of network dynamics is very intuitive to biologists. In discussions with collaborators, this feature is always perceived as very user-friendly and very suitable for presentation purposes.
+
+
+- Compared to other formalisms, ODEs have the advantage of offering a variety of parameter fitting methods and tools (eg: the COPASI tool cited in the article). Formalisms such as automata, process calculi and petri nets, that were developed for the specification of concurrent systems, lack automatic parameter fitting methods, which does not allow the utilization of the experimental data to refine the models. In this work, the simulation results show a good agreement with the experimental data. However, as is common in all papers that propose alternative formalisms, the utilization of the data to fine-tune the model parameters is left as future work. I would consider this to be one of the current main problems in this field. Therefore I would like if the authors would elaborate some more regarding their ideas to address this problem.
+
+Reply:
+Thanks for this very useful suggestion. We have now briefly outlined a future implementation of a parameter fitting method in the conclusions section of the paper. Upon your suggestion, we will give this implementation high priority in our future work.
+
+
+
+Minor issues:
+
+- Typo in page 3, line 49: "De denominator"
+
+Reply:
+The typo has been corrected in the paper.
+
+
+
+We thank you for your time and helpful comments, and we hope to have addressed the issues you raised in a satisfactory manner.
