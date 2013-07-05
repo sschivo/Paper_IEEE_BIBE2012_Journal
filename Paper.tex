@@ -220,8 +220,9 @@ in Section~\ref{sec:case-study} that abstracted models can capture experimental 
 
 A third level of abstraction is the discretization of activities into integer variables with a user-defined granularity, ranging from Boolean (2 levels) 
 to almost continuous (100 levels). This discretization gives the user the flexibility to adjust the model abstraction to the level of 
-prior knowledge, to the quality and nature of experimental data and to the biological questions at hand. It also allows 
-control over the trade-off between level of detail and computational performance for large models.
+prior knowledge, to the quality and nature of experimental data and to the biological questions at hand.
+A beginner working on smaller models will profit from choosing a high granularity, while
+an expert ANIMO user will be able to keep a balance between level of detail and computational performance when dealing with large models.
 
 
 \subsection{Reaction kinetics}\label{sec:modeling-framework}
@@ -592,9 +593,10 @@ molecular species have very small concentrations, which nullifies the assumption
 used in COPASI and E-Cell, and by allowing for qualitative modelling, as does GNA.
 Other tools, such as Systems Biology Workbench~\cite{sbw}, allow to couple high-performance
 analysis engines (such as roadRunner) to user-friendly interfaces (e.g. JDesigner). Finally, tools such as CellDesigner~\cite{celldesigner}
+and Cell Illustrator~\cite{cell-illustrator}
 provide an appealing graphical representation as an interface to powerful computational engines.
-Most of the cited tools are founded on parameter-intensive approaches, while the paradigm implemented in ANIMO
-uses less precise formulations, which requires less initial knowledge from the user.
+Most of the cited tools are founded on parameter-intensive approaches, while the ANIMO's paradigm
+uses less precise formulations, thus requiring less initial knowledge from the user.
 
 
 Methods relying on concurrent systems
