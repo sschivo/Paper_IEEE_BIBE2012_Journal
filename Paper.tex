@@ -56,7 +56,7 @@ MIRA Institute for Biomedical Technology and Technical Medicine, Enschede, The N
 B. Wanders and P. E. van der Vet are with the Human Media Interaction group,
 Faculty of EEMCS, University of Twente, Enschede, The Netherlands.
 
-We acknowledge support from Netherlands Organisation for Scientific Research (NWO) CASIMIR to J.S.}%
+We acknowledge support from Netherlands Organisation for Scientific Research (NWO) CASIMIR to J. Scholma.}%
 }
 
 \maketitle
@@ -221,8 +221,11 @@ in Section~\ref{sec:case-study} that abstracted models can capture experimental 
 A third level of abstraction is the discretization of activities into integer variables with a user-defined granularity, ranging from Boolean (2 levels) 
 to almost continuous (100 levels). This discretization gives the user the flexibility to adjust the model abstraction to the level of 
 prior knowledge, to the quality and nature of experimental data and to the biological questions at hand.
-A beginner working on smaller models will profit from choosing a high granularity, while
-an expert ANIMO user will be able to keep a balance between level of detail and computational performance when dealing with large models.
+A starting user working on smaller models will benefit from choosing a high granularity, whereas
+more experienced users will be able to exploit the trade-off between level of detail and performance when dealing with large models.
+
+%A beginner working on smaller models will profit from choosing a high granularity, while
+%an expert ANIMO user will be able to keep a balance between level of detail and computational performance when dealing with large models.
 
 
 \subsection{Reaction kinetics}\label{sec:modeling-framework}
@@ -576,35 +579,31 @@ interactively view the differences at different time points. \label{fig:case-stu
 \section{Related work}\label{sec:related-work}
 Formal approaches to modelling biological systems can be divided into two large groups. The first 
 includes approaches based on ordinary differential equations (ODEs), whereas the second 
-encompasses methods based on concurrent systems. This distinction captures the main
-characteristic of concurrent systems, which allows one to describe a system by specifying its
-components in isolation, and then define the interaction rules. Methods based on ODEs on the other 
-hand will need to explicitly account for all changes each interaction can cause to each component of the system.
-Even if less maintainable, models based on ODEs are usually easier to understand, because of their strong
-connection with the actual chemical reaction laws governing the evolution of a system. Approaches based 
-on concurrency will usually add a layer on top of the canonical description of chemical reactions, 
-requiring a user to acquire some practice before being able to fully benefit from the different paradigm.
+encompasses methods based on concurrent systems. In ODEs, the model can be directly derived from the actual chemical 
+reaction laws that govern the evolution of a system. However, this characteristic makes rewriting of the model necessary
+upon modification of the network. Concurrent methods on the other hand, describe a system by specifying its
+components in isolation, and then defining the interaction rules. This compositionality promotes modularity of models and
+reuse of previously developed network motifs.
 
 Tools that allow to construct models based on ODEs include for example COPASI~\cite{copasi}, 
 E-Cell~\cite{e-cell} and GNA~\cite{gna}.
 These tools add to the potential of ODEs by coupling them with additional modelling approaches,
-such as stochastic models\footnote{Stochastic modelling becomes particularly useful when some
-molecular species have very small concentrations, which nullifies the assumption of a well-mixed solution used in models based on ODEs.}
-used in COPASI and E-Cell, and by allowing for qualitative modelling, as does GNA.
+such as stochastic models used in COPASI and E-Cell, and by allowing for qualitative modelling, as does GNA.
+Stochastic modelling becomes particularly useful when some
+molecular species have very small concentrations, which nullifies the assumption of a well-mixed solution used in models based on ODEs.
 Other tools, such as Systems Biology Workbench~\cite{sbw}, allow to couple high-performance
 analysis engines (such as roadRunner) to user-friendly interfaces (e.g. JDesigner). Finally, tools such as CellDesigner~\cite{celldesigner}
-and Cell Illustrator~\cite{cell-illustrator}
 provide an appealing graphical representation as an interface to powerful computational engines.
-Most of the cited tools are founded on parameter-intensive approaches, while the ANIMO's paradigm
-uses less precise formulations, thus requiring less initial knowledge from the user.
 
-
-Methods relying on concurrent systems
-can be either qualitative or quantitative. The distinction is based on the possibility to add numerical 
-(quantitative) information to the model, such as reaction rates, molecular concentrations, and reaction volumes. 
-ANIMO is a quantitative method based on concurrent systems. 
+In the category of concurrent methods, Cell Illustrator~\cite{cell-illustrator} is characterized by visually representing
+a network in a way that is strongly related to the underlying Petri net model. This gives a clear link between the
+network representation and the model. ANIMO aims at bringing 
+the model representation as close as possible to text book figures of biological networks, by collapsing different protein states into a 
+single node. Together with the abstraction of biochemical reactions to cause-and-effect relationships, this makes mathematical 
+modelling more accessible to users without previous experience in this field. 
 The use of \tas\ to model biological signalling events has been described before by Maler and Batt~\cite{oded-ta-discretization}. 
 ANIMO takes a less general approach, tailored for the construction of more abstract models.
+
 
 
 \section{Conclusions and future work}\label{sec:conclusions}
