@@ -1,0 +1,8 @@
+Dear Editors,
+please find enclosed a revised version of our manuscript entitled "Modelling biological pathway dynamics with Timed Automata" by Stefano Schivo and Jetse Scholma et al., which we would like to be considered for acceptance and publication in the special issue of the Journal of Biomedical and Health Informatics entitled "Computational solutions to large-scale data management and analysis in translational and personalized medicine".
+In addition to the reviewers' comments, we addressed the difficulties arising from colour-blindness by changing the colour scales when needed.
+
+We would appreciate your consideration of re-reviewing our manuscript for publication in the Journal of Biomedical and Health Informatics.
+
+Sincerely, on behalf of all co-authors,
+
